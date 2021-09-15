@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Form</title>
+</head>
+<body>
+
+
+{{if .}}
+<main>
+    <h1><span style="background-color: rgb(113, 221, 149);text-align: center;"> CANDIDATE DETAILS</span></h1>
+    <br>
+    <p style="color: rgb(24, 19, 19);font-size: large;"><b><strong >Candidate</strong> (First name),<em>(Last name)</em>:</b></p>
+    {{range $key, $value := .}}
+            <p><strong>{{$key}}</strong></p>
+            <ul style="color: rgb(26, 129, 226);">{{range $value}}<li><em>{{.}}</em></li>{{end}}</ul>
+    {{end}}
+</main>
+{{end}}
+
+
+<form action="/" method="POST">
+        <label for="a">First Name:</label><br>
+        <input type="text" id="a" name="First Name" placeholder="Enter first name" autofocus autocomplete="off" ><br>
+        <label for="b">Last Name:</label><br>
+        <input type="text" id="b" name="Last Name" placeholder="Enter Last name"><br>
+        <label for="c">Address:</label><br>
+        <input type="text" id="c" name="Address" placeholder="Enter Address"><br>
+        <label for="d">Mobile No:</label><br>
+        <input type="number" id="d" name="Phone" placeholder="Enter Phone number"><br>
+        <label for="e">Age:</label><br>
+        <input type="number" id="e" name="Age" placeholder="Enter Age"><br>
+        <label for="f">Female</label><br>
+        <input type="radio"  id="f" name="Gender" value="Female"><br>
+        <label for="g">Male</label><br>
+        <input type="radio" id="g" name="Gender" value="Male"><br>
+        <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
