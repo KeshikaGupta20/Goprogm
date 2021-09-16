@@ -1,41 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8">
     <title>Detail Form</title>
+    <style>
+
+        body {
+  background-color: rgb(230, 246, 248);
+ 
+}
+h1 {
+  background-color: rgb(251, 189, 137);
+  text-align: center;
+}
+p {
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
+p ul{
+    color: rgb(248, 75, 44);
+
+}
+.a{ 
+    text-align: center;
+    font-size: medium;
+    width: 300px;
+    height: 28px;
+
+}
+.l{
+    text-align: left;
+    font-size: medium;
+}
+#btn{
+    height: 35px;
+    width: 100px;
+    background-color:rgb(199, 248, 134);
+    border: 1 solid rgb(34, 33, 33);
+    font-size: medium;
+}
+    </style>
 </head>
 <body>
 
 
 {{if .}}
 <main>
-    <h1><span style="background-color: rgb(113, 221, 149);text-align: center;"> CANDIDATE DETAILS</span></h1>
+    <h1> Candidate Details</h1>
     <br>
-    <p style="color: rgb(24, 19, 19);font-size: large;"><b><strong >Candidate</strong> (First name),<em>(Last name)</em>:</b></p>
+    <p><b><strong >Candidate</strong> (First name),<em>(Last name)</em>:</b></p>
     {{range $key, $value := .}}
             <p><strong>{{$key}}</strong></p>
-            <ul style="color: rgb(26, 129, 226);">{{range $value}}<li><em>{{.}}</em></li>{{end}}</ul>
+            <ul>{{range $value}}<li><em>{{.}}</em></li>{{end}}</ul>
     {{end}}
 </main>
 {{end}}
 
 
 <form action="/" method="POST">
-        <label for="a">First Name:</label><br>
-        <input type="text" id="a" name="First Name" placeholder="Enter first name" autofocus autocomplete="off" ><br>
-        <label for="b">Last Name:</label><br>
-        <input type="text" id="b" name="Last Name" placeholder="Enter Last name"><br>
-        <label for="c">Address:</label><br>
-        <input type="text" id="c" name="Address" placeholder="Enter Address"><br>
-        <label for="d">Mobile No:</label><br>
-        <input type="number" id="d" name="Phone" placeholder="Enter Phone number"><br>
-        <label for="e">Age:</label><br>
-        <input type="number" id="e" name="Age" placeholder="Enter Age"><br>
-        <label for="f">Female</label><br>
-        <input type="radio"  id="f" name="Gender" value="Female"><br>
-        <label for="g">Male</label><br>
-        <input type="radio" id="g" name="Gender" value="Male"><br>
-        <input type="submit" value="Submit">
+    <center>
+    <fieldset class="fs" style="background-color: rgb(201, 238, 243);height: 660px; width: 500px;">
+    <h1> CANDIDATE DETAILS</h1><br>
+   
+        <label class="l" >First Name:</label><br><br>
+        <input type="text" class="a"  name="First Name" placeholder="Enter first name" autofocus autocomplete="off" ><br><br>
+        <label class="l"  >Last Name:</label><br><br>
+        <input type="text" class="a" name="Last Name" placeholder="Enter Last name"><br><br>
+        <label class="l"  >Address:</label><br><br>
+        <input type="text" class="a" name="Address" placeholder="Enter Address"><br><br>
+        <label class="l"  >Mobile No:</label><br><br>
+        <input type="number" class="a" name="Phone" placeholder="Enter Phone number"><br><br>
+        <label class="l"  >Age:</label><br><br>
+        <input type="number" class="a"  name="Age" placeholder="Enter Age"><br><br>
+        <label class="l"  >Gender:</label><br><br>
+        <label >Female</label>
+        <input type="radio"   name="Gender" value="Female"><span><label>Male</label>
+        <input type="radio"  name="Gender" value="Male"></span><br><br>
+        <input type="submit" id="btn" value="Submit">
+    
+    </fieldset>
+</center>
 </form>
 
 </body>

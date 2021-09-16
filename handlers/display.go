@@ -1,4 +1,4 @@
-/* package handlers
+package handlers
 
 import (
 	"encoding/json"
@@ -13,7 +13,7 @@ type dis struct {
 	Domain  string `json: "domain"`
 }
 
-func display(w http.ResponseWriter, req *http.Request) {
+func Display(w http.ResponseWriter, req *http.Request) {
 	d := dis{
 		Name:    "Keshika Gupta",
 		Address: "Noida",
@@ -27,4 +27,3 @@ func display(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Request arrived")
 
 }
-*/
